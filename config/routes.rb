@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   scope 'api' do
     scope 'v1' do
       resources :quizes, only: %i( index create show destroy )
-      resources :questions, only: %i( index create show edit destroy )
+      resources :questions, only: %i( index create show update destroy )
     end
   end
   

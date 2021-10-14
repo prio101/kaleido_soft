@@ -4,8 +4,8 @@ class CreateResults < ActiveRecord::Migration[6.0]
       t.decimal :result
       t.text  :feedback
       
-      t.references  :users
-      t.references  :quizzes
+      t.references  :user
+      t.references  :quiz
       t.timestamps
     end
   end

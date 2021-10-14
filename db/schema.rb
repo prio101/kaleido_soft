@@ -19,10 +19,10 @@ ActiveRecord::Schema.define(version: 2021_10_14_131530) do
     t.string "question"
     t.jsonb "options"
     t.string "correct_answer"
-    t.bigint "quizzes_id"
+    t.bigint "quiz_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["quizzes_id"], name: "index_questions_on_quizzes_id"
+    t.index ["quiz_id"], name: "index_questions_on_quiz_id"
   end
 
   create_table "quizzes", force: :cascade do |t|
@@ -38,12 +38,12 @@ ActiveRecord::Schema.define(version: 2021_10_14_131530) do
   create_table "results", force: :cascade do |t|
     t.decimal "result"
     t.text "feedback"
-    t.bigint "users_id"
-    t.bigint "quizzes_id"
+    t.bigint "user_id"
+    t.bigint "quiz_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["quizzes_id"], name: "index_results_on_quizzes_id"
-    t.index ["users_id"], name: "index_results_on_users_id"
+    t.index ["quiz_id"], name: "index_results_on_quiz_id"
+    t.index ["user_id"], name: "index_results_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
