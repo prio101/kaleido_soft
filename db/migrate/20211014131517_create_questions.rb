@@ -5,7 +5,7 @@ class CreateQuestions < ActiveRecord::Migration[6.0]
       t.jsonb :options
       t.string  :correct_answer
 
-      t.references  :quizzes
+      t.references  :quiz
       t.timestamps
     end
   end

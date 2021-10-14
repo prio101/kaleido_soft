@@ -27,7 +27,6 @@ class QuizesController < ApplicationController
     else
       render json: { message: 'no quiz found' }, status: :not_found
     end
-    
   end
 
   def destroy
