@@ -45,7 +45,8 @@ class QuizesController < ApplicationController
                                   :topic, 
                                   :published,
                                   :questions_count,
-                                  :correct_answer_reward 
+                                  :correct_answer_reward,
+                                  :difficulty
                                 )
   end
 end

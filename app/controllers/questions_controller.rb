@@ -8,7 +8,7 @@ class QuestionsController < ApplicationController
 
   def create
     question = Question.new(question_params)
-    if question.valid? and question.save!
+    if question.valid? and question.save! and question.valid_limit?
       render json: { data: question, message: :created }, 
              status: :created
     else
