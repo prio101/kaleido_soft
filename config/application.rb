@@ -47,5 +47,6 @@ module KaleidosoftBackend
       end
     end
     config.hosts << "kaelido-backend.herokuapp.com"
+    config.hosts << "kaleidosoft-frontend.herokuapp.com"
   end
 end
