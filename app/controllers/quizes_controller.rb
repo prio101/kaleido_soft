@@ -4,7 +4,7 @@ class QuizesController < ApplicationController
   def index
     @quizes = Quiz.where(published: :published)
     
-    render json: @quizes, status: :ok
+    render json: @quizes, include: ['questions'], status: :ok
   end
 
   def create
@@ -16,14 +16,14 @@ class QuizesController < ApplicationController
     else
       render json: { message: 'quiz cant be created', 
                      error: quiz.errors.messages 
-                   }, 
+                   },
              status: :bad_request
     end
   end
 
   def show
     if @quiz.published?
-      render json: @quiz, status: :ok
+      render json: @quiz, include: ['questions'], status: :ok
     else
       render json: { message: 'no quiz found' }, status: :not_found
     end
