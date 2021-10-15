@@ -36,8 +36,14 @@ module KaleidosoftBackend
 
     config.middleware.insert_before 0, Rack::Cors do
       allow do
-        origins '*'
-        resource '*', :headers => :any, :methods => [:get, :post, :options]
+        if Rails.env.development?
+          origins '*'
+          resource '*', :headers => :any, :methods => [:get, :post, :options]
+        end
+        if Rails.env.production?
+          origin 'https://kaelido-backend.herokuapp.com/'
+          resource '*', :headers => :any, :methods => [:get, :post, :options]
+        end
       end
     end
   end
