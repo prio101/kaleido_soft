@@ -41,7 +41,7 @@ module KaleidosoftBackend
           resource '*', :headers => :any, :methods => [:get, :post, :options]
         end
         if Rails.env.production?
-          origin 'https://kaleidosoft-frontend.herokuapp.com/'
+          origins 'https://kaleidosoft-frontend.herokuapp.com/'
           resource '*', :headers => :any, :methods => [:get, :post, :options]
         end
       end
