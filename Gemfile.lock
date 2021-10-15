@@ -196,7 +196,7 @@ DEPENDENCIES
   database_cleaner-active_record
   factory_bot_rails
   faker
-  listen (~> 3.2)
+  listen
   pg
   puma (~> 4.1)
   rack-cors
