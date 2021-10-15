@@ -8,7 +8,7 @@ use Rack::Cors do
 
  # allow all origins in development
  allow do
-   origins 'https://kaleidosoft-frontend.herokuapp.com/'
+   origins '*'
    resource '*',
        :headers => :any,
        :methods => [:get, :post, :delete, :put, :options]
